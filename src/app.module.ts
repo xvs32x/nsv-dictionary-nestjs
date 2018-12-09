@@ -3,17 +3,18 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { WordEntity } from './word.entity';
+const serverName = 'heroku';
 // process.env.NODE_ENV === 'development'
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'us-cdbr-east.cleardb.com',
       port: 3306,
       username: 'b5868a056b7e4c',
       password: 'e744bff2',
-      database: 'heroku_e185ea72ecb7e1b',
+      database: serverName + '_e185ea72ecb7e1b',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
