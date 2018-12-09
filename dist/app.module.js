@@ -11,6 +11,7 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const word_entity_1 = require("./word.entity");
+const serverName = 'heroku';
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -18,11 +19,11 @@ AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: 'localhost',
+                host: 'us-cdbr-east.cleardb.com',
                 port: 3306,
-                username: 'root',
-                password: 'microlab',
-                database: 'words',
+                username: 'b5868a056b7e4c',
+                password: 'e744bff2',
+                database: serverName + '_e185ea72ecb7e1b',
                 entities: [__dirname + '/**/*.entity{.ts,.js}'],
                 synchronize: true,
             }),
