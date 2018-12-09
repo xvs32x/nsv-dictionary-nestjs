@@ -13,7 +13,7 @@ export class AppService {
   /**
    * Get random word for learning
    */
-  getRandomWord() {
+  getRandomWord(): Promise<WordEntity | null> {
     return this.wordRepository.createQueryBuilder('word')
       .orderBy('RAND()')
       .getOne();

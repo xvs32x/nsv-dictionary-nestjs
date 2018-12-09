@@ -8,6 +8,11 @@ export class AppController {
   constructor(private readonly appService: AppService) {
   }
 
+  @Get('random')
+  random() {
+    return this.appService.getRandomWord();
+  }
+
   @Get()
   query(@Query() query: FindManyOptions<WordEntity>) {
     return this.appService.query(query);
