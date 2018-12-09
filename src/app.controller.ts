@@ -21,7 +21,7 @@ export class AppController {
   @Post()
   upsert(@Body() word: { term: string, translate: string }) {
     if (!word.term || !word.translate) {
-      return new HttpException('Required fields are empty!', 422);
+      throw new HttpException('Required fields are empty!', 422);
     }
     return this.appService.upsert({
       term: word.term,
