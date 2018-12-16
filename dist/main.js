@@ -16,7 +16,7 @@ function bootstrap() {
         app.enableCors({
             origin: '*',
         });
-        yield app.listen(3000);
+        yield app.listen(process.env.PORT ? process.env.PORT : 3000);
     });
 }
 bootstrap();
